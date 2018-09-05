@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-import {Subscription} from "rxjs";
-import {TimerObservable} from "rxjs/observable/TimerObservable";
+import {Subscription, Observable, timer} from "rxjs";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     this.logeando=false;
     this.clase="progress-bar progress-bar-danger progress-bar-striped active";
     this.progresoMensaje="NSA spy..."; 
-    let timer = TimerObservable.create(200, 50);
+    let timer = Observable.timer(200, 50);
     this.subscription = timer.subscribe(t => {
       console.log("inicio");
       this.progreso=this.progreso+1;
