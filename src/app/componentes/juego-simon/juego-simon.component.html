@@ -1,17 +1,55 @@
-<div [hidden]="gameStarted">
-  <button class="btn btn-primary" (click)="startGame()">Iniciar juego</button>
-</div>
+<div class="container">
 
-<div [hidden]="!gameStarted">
-    
-    <button class="btn btn-danger" (click)="clickColor('r')">Rojo</button>
+  <div [hidden]="gameStarted">
+    <button class="btn btn-primary" (click)="startGame()">Iniciar juego</button>
+  </div>
 
-    <button class="btn btn-primary" (click)="clickColor('az')">Iniciar juego</button>
+  <div [hidden]="!gameStarted">
 
-    <br>
+      <h1>Nivel {{level.value}}</h1>
 
-    <button class="btn btn-warning" (click)="clickColor('am')">Iniciar juego</button>
+      <br>
 
-    <button class="btn btn-success" (click)="clickColor('v')">Iniciar juego</button>
+      <div class="row" style="widht: 100%">
+
+        <div class="col col-6">
+          <div class="card" id="card-rojo">
+            <div class="card-body">
+                <h5 class="card-title">Rojo</h5>
+                <a (click)="clickColor('r')" class="btn btn-primary">Click</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-6">
+          <div class="card" id="card-azul">
+            <div class="card-body">
+                <h5 class="card-title">Azul</h5>
+                <a (click)="clickColor('az')" class="btn btn-primary">Click</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-6">
+          <div class="card" id="card-amarillo">
+            <div class="card-body">
+                <h5 class="card-title">Amarillo</h5>
+                <a (click)="clickColor('am')" class="btn btn-primary">Click</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-6">
+          <div class="card" id="card-verde">
+            <div class="card-body">
+                <h5 class="card-title">Verde</h5>
+                <a (click)="clickColor('v')" class="btn btn-primary">Click</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
 
 </div>

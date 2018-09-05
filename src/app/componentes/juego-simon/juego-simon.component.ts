@@ -19,9 +19,9 @@ export class JuegoSimonComponent {
     this.level.subscribe( val => {
       this.currentLevelIndex = 0;
       for(let i=0; i<=val; i++) {
-        //setTimeout(() => {
+        setTimeout(() => {
           this.showColor(this.sequence[i]);
-        //}, 500);
+        }, 500);
       }
     });
   }
@@ -43,7 +43,7 @@ export class JuegoSimonComponent {
   }
 
   private showColor(color: string) {
-    alert(color);
+    console.log(color);
   }
 
   private endGame(): void {
