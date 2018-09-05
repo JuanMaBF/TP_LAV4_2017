@@ -9,31 +9,48 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class JuegoSimonComponent {
 
   public gameStarted: boolean = false;
-  private secuencia: Array<string> = new Array<string>();
-  private level: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
+  private sequence: Array<string> = new Array<string>();
+  private level: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+  private currentLevelIndex: number = 0;
 
   public constructor() {
-    this.secuencia = ['r', 'r', 'am', 'az', 'v', 'v', 'am', 'az', 'az', 'r', 'r', 'r', 'am', 'az']
+    this.sequence = ['r', 'r', 'am', 'az', 'v', 'v', 'am', 'az', 'az', 'r', 'r', 'r', 'am', 'az']
     this.level.subscribe( val => {
-      for(let i=0; i<val; i++) {
-        setTimeout(() => {
-          this.showColor(this.secuencia[i]);
-        }, 500);
+      this.currentLevelIndex = 0;
+      for(let i=0; i<=val; i++) {
+        //setTimeout(() => {
+          this.showColor(this.sequence[i]);
+        //}, 500);
       }
     });
   }
 
   public startGame(): void {
     this.gameStarted = true;
-    this.level.next(3);
+    this.level.next(1);
+  }
+
+  public clickColor(color: string) {
+    if(color == this.sequence[this.currentLevelIndex]) {
+      this.currentLevelIndex++;
+      if (this.currentLevelIndex == this.level.value + 1) {
+        this.level.next(this.currentLevelIndex);
+      } 
+    } else {
+      this.endGame();
+    }
   }
 
   private showColor(color: string) {
     alert(color);
   }
 
-  public endGame(): void {
+  private endGame(): void {
+    alert('perdiste. Puntaje: ' + this.level.value);
     this.gameStarted = false;
+    this.currentLevelIndex = 0;
+    this.level.next(-1);
   }
 
 }
