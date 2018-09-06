@@ -84,6 +84,8 @@ export class JuegoSimonComponent {
       .title(win ? "Ganaste!" : "Perdites :(")
       .body("Puntaje: " + this.level.value)
       .open();
+    let current = localStorage.getItem('simon');
+    localStorage.setItem('simon', current + ',{ win: '+win+', puntaje:' + this.level.value + '}');
     this.gameStarted = false;
     this.currentLevelIndex = 0;
     this.level.next(-1);
