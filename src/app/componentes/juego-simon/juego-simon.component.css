@@ -1,3 +1,18 @@
+.row {
+    width: 400px;
+}
+
+.col-6 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.card {
+    border-radius: 0px;
+    width: 200px;
+    height: 200px;
+}
+
 #card-rojo {
     background-color: red;
 }

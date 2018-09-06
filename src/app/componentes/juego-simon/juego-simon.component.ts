@@ -25,8 +25,9 @@ export class JuegoSimonComponent {
       this.currentLevelIndex = 0;
       this.showingSequence = true;
       for(let i=0; i<=val; i++) {
-        this.current = i;
-        //this.showColor(this.sequence[i]);
+        setTimeout(() => {
+          this.showColor(this.sequence[i]);
+        }, i * 1000);
       }
       this.showingSequence = false;
     });
@@ -45,7 +46,7 @@ export class JuegoSimonComponent {
   }
 
   private createSequence(): void {
-    for(let i=0; i<14; i++) {
+    for(let i=0; i<6; i++) {
       let index = Math.floor(Math.random() * Math.floor(3));
       this.sequence.push(this.colorCodes[index]);
     }
@@ -57,7 +58,9 @@ export class JuegoSimonComponent {
         this.audios[color].play();
         this.currentLevelIndex++;
         if (this.currentLevelIndex == this.level.value + 1 && this.level.value + 1 != 14) {
-          this.level.next(this.currentLevelIndex);
+          setTimeout( () => {
+            this.level.next(this.currentLevelIndex);
+          }, 1000);
         } else if (this.level.value == 14) {
           alert('GANASTE');
           this.endGame();
@@ -69,10 +72,7 @@ export class JuegoSimonComponent {
   }
 
   private showColor(color: string) {
-    setTimeout(() => {
-      //this.audios[color].play();
-      //this.current = color
-    }, 1000);
+    this.audios[color].play();
   }
 
 
