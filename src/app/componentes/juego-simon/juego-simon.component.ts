@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  BehaviorSubject } from 'rxjs';
 import * as $ from 'jquery';
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
 
 @Component({
   selector: 'juego-simon',
@@ -10,7 +11,6 @@ import * as $ from 'jquery';
 export class JuegoSimonComponent {
 
   public gameStarted: boolean = false;
-  public modalMessage: string;
 
   private colorCodes: Array<string> = ['r', 'bl', 'yl', 'gr'];
   private sequence: Array<string>;
@@ -19,7 +19,7 @@ export class JuegoSimonComponent {
   private currentLevelIndex: number = 0;
   private audios: Array<any> = new Array<any>(); 
 
-  public constructor() {
+  public constructor(public modal: Modal) {
     this.level.subscribe( val => {
       this.currentLevelIndex = 0;
       this.showingSequence = true;
@@ -80,8 +80,10 @@ export class JuegoSimonComponent {
 
 
   private endGame(win: boolean): void {
-    this.modalMessage = (win ? "GANASTE. " : "") + "Puntaje: " + this.level.value; 
-    $("#endGameModal").modal();
+    this.modal.alert()
+      .title(win ? "Ganaste!" : "Perdites :(")
+      .body("Puntaje: " + this.level.value)
+      .open();
     this.gameStarted = false;
     this.currentLevelIndex = 0;
     this.level.next(-1);
