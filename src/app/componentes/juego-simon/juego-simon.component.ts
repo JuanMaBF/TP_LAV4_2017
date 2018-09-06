@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
+import {  BehaviorSubject } from 'rxjs';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'juego-simon',
@@ -9,15 +10,13 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class JuegoSimonComponent {
 
   public gameStarted: boolean = false;
+  public modalMessage: string;
 
-  private colorCodes: Array<string> = ['r', 'az', 'am', 'v'];
+  private colorCodes: Array<string> = ['r', 'bl', 'yl', 'gr'];
   private sequence: Array<string>;
   private level: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
   private showingSequence: boolean = false;
   private currentLevelIndex: number = 0;
-
-  public current: number;
-
   private audios: Array<any> = new Array<any>(); 
 
   public constructor() {
@@ -33,9 +32,9 @@ export class JuegoSimonComponent {
     });
 
     this.audios['r'] = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
-    this.audios['am'] = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
-    this.audios['az'] = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
-    this.audios['v'] = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
+    this.audios['yl'] = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
+    this.audios['bl'] = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
+    this.audios['gr'] = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
   }
 
   public startGame(): void {
@@ -46,7 +45,7 @@ export class JuegoSimonComponent {
   }
 
   private createSequence(): void {
-    for(let i=0; i<6; i++) {
+    for(let i=0; i<7; i++) {
       let index = Math.floor(Math.random() * Math.floor(3));
       this.sequence.push(this.colorCodes[index]);
     }
@@ -55,30 +54,34 @@ export class JuegoSimonComponent {
   public clickColor(color: string) {
     if(!this.showingSequence){
       if(color == this.sequence[this.currentLevelIndex]) {
-        this.audios[color].play();
+        this.showColor(color);
         this.currentLevelIndex++;
-        if (this.currentLevelIndex == this.level.value + 1 && this.level.value + 1 != 14) {
+        if (this.currentLevelIndex == this.level.value + 1 && this.currentLevelIndex != 7) {
           setTimeout( () => {
             this.level.next(this.currentLevelIndex);
           }, 1000);
-        } else if (this.level.value == 14) {
-          alert('GANASTE');
-          this.endGame();
+        } else if (this.level.value == 6 && this.currentLevelIndex == 7) {
+          this.endGame(true);
         }
       } else {
-        this.endGame();
+        this.endGame(false);
       }
     }
   }
 
   private showColor(color: string) {
+    $('#card-'+color).addClass('active');
     this.audios[color].play();
+    setTimeout( () => {
+      $('#card-'+color).removeClass('active')
+    } , 500);
   }
 
 
 
-  private endGame(): void {
-    alert('perdiste. Puntaje: ' + this.level.value);
+  private endGame(win: boolean): void {
+    this.modalMessage = (win ? "GANASTE. " : "") + "Puntaje: " + this.level.value; 
+    $("#endGameModal").modal();
     this.gameStarted = false;
     this.currentLevelIndex = 0;
     this.level.next(-1);

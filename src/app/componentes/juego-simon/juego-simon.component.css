@@ -13,18 +13,34 @@
     height: 200px;
 }
 
-#card-rojo {
+#card-r {
     background-color: red;
 }
 
-#card-azul {
+#card-r.active {
+    background-color: #ff4d4d;
+}
+
+#card-bl {
     background-color: blue;
 }
 
-#card-amarillo {
+#card-bl.active {
+    background-color: #4f4fff;
+}
+
+#card-yl {
     background-color: yellow;
 }
 
-#card-verde {
+#card-yl.active {
+    background-color: #ffff73;
+}
+
+#card-gr {
     background-color: green;
+}
+
+#card-gr.active {
+    background-color: #34c134;
 }

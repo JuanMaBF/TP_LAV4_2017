@@ -55,6 +55,9 @@ import { InputJugadoresComponent } from './componentes/input-jugadores/input-jug
 import { SexoPipe } from './pipes/sexo.pipe';
 import { JuegoSimonComponent } from './componentes/juego-simon/juego-simon.component';
 
+import { ModalModule } from 'ngx-modialog';
+import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +92,9 @@ import { JuegoSimonComponent } from './componentes/juego-simon/juego-simon.compo
     HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
-    })
+    }),
+    ModalModule.forRoot(),
+    BootstrapModalModule
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
