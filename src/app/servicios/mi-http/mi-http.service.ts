@@ -5,7 +5,8 @@ import { Http, Response } from '@angular/http';
 
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
+
 
 @Injectable()
 export class MiHttpService {
@@ -34,8 +35,8 @@ export class MiHttpService {
   public httpGetO ( url: string): Observable<Response>
   {
     return this.http.get( url )
-      .map( ( res: Response ) => res.json())
-      .catch( ( err: any ) => Observable.throw(err.json().error || 'Server error'));
+      //.map( ( res: Response ) => res.json())
+      //.catch( ( err: any ) => Observable.throw(err.json().error || 'Server error'));
   }
 
 

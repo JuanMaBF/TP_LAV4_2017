@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
     this.logeando=false;
     this.clase="progress-bar progress-bar-danger progress-bar-striped active";
     this.progresoMensaje="NSA spy..."; 
-    let timer = Observable.timer(200, 50);
-    this.subscription = timer.subscribe(t => {
+    //let timer = Observable.timer(200, 50);
+    /*this.subscription = timer.subscribe(t => {
       console.log("inicio");
       this.progreso=this.progreso+1;
       this.ProgresoDeAncho=this.progreso+20+"%";
@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
           this.Entrar();
           break;
       }     
-    });
+    });*/
     //this.logeando=true;
   }
 

@@ -1,9 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 
+.container {
+    background-color: white;
+    padding: 10px;
+}
+
+.inicio {
+    margin-top: 15%;
+}
+
 .titulo {
     font-size: 4em;
     font-family: Fredoka One;
     text-align: center;
+}
+
+.btn-primary {
+    background-color: #FF5722;
+    border-color: rgb(248, 67, 12);
 }
 
 .row {
