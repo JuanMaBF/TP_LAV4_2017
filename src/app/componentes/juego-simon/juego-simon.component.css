@@ -1,5 +1,9 @@
 .row {
-    width: 400px;
+    width: 420px;
+    margin: auto;
+    padding: 10px;
+    background-color: black;
+    border-radius: 200px;
 }
 
 .col-6 {
@@ -15,6 +19,7 @@
 
 #card-r {
     background-color: red;
+    border-top-left-radius: 200px;
 }
 
 #card-r.active {
@@ -23,6 +28,7 @@
 
 #card-bl {
     background-color: blue;
+    border-top-right-radius: 200px;
 }
 
 #card-bl.active {
@@ -31,6 +37,7 @@
 
 #card-yl {
     background-color: yellow;
+    border-bottom-left-radius: 200px;
 }
 
 #card-yl.active {
@@ -39,6 +46,7 @@
 
 #card-gr {
     background-color: green;
+    border-bottom-right-radius: 200px;
 }
 
 #card-gr.active {
