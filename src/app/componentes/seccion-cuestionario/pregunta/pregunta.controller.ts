@@ -26,7 +26,7 @@ export class PregunatComponent  {
 
     public aumentarContador(): void {
         this.contador++;
-        this.change.emit(this.contador);
+        this.change.emit();
     }
 
 }

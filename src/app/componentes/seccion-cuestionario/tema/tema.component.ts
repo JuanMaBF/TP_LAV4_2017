@@ -12,7 +12,7 @@ import { BehaviorSubject } from 'rxjs';
         <div *ngFor="let cues of cuestionarios">
           <cuestionario 
             [cues]="cues"
-            (change)="aumentarContador($event)"></cuestionario>
+            (change)="aumentarContador()"></cuestionario>
         </div>
       </div>
     </div>
@@ -35,8 +35,8 @@ export class TemaComponent {
     this.cuestionarios.push(cuestionario1, cuestionario2);
   }
 
-  public aumentarContador(numero: number) {
-    this.contador = numero;
+  public aumentarContador() {
+    this.contador++;
   }
 
 }

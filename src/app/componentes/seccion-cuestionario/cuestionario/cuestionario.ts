@@ -15,7 +15,7 @@ import { BehaviorSubject } from 'rxjs';
                     <div *ngFor="let preg of preguntas">
                         <pregunta 
                             [preg]="preg"
-                            (change)="emitEvent($event)"></pregunta>
+                            (change)="emitEvent()"></pregunta>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -38,8 +38,8 @@ export class CuestionarioComponent implements OnInit {
         this.preguntas = this.cues.preguntas;
     }
 
-    public emitEvent(num: number) {
-        this.change.emit(num);
+    public emitEvent() {
+        this.change.emit();
     }    
 
 }
