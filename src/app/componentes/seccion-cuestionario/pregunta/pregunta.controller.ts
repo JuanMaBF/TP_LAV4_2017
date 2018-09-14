@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { pregunta } from '../tema/tema.component';
 import { BehaviorSubject } from 'rxjs';
 
@@ -13,18 +13,20 @@ import { BehaviorSubject } from 'rxjs';
         aria-describedby="emailHelp" 
         placeholder="{{preg.consigna}}">
 
-    {{respuesta}}
+    
     <button (click)="aumentarContador()">Haceme click wachim</button>
   `,
   styles: []
 })
 export class PregunatComponent  {
     @Input() preg: pregunta;
-    @Input() contador: BehaviorSubject<number>;
+    @Output() change = new EventEmitter<number>();
     public respuesta: string;
+    public contador = 0;
 
     public aumentarContador(): void {
-        this.contador.next(this.contador.value+1);
+        this.contador++;
+        this.change.emit(this.contador);
     }
 
 }

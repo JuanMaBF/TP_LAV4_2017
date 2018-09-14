@@ -12,7 +12,7 @@ import { BehaviorSubject } from 'rxjs';
         <div *ngFor="let cues of cuestionarios">
           <cuestionario 
             [cues]="cues"
-            [contador]="$contador"></cuestionario>
+            (change)="aumentarContador($event)"></cuestionario>
         </div>
       </div>
     </div>
@@ -24,14 +24,8 @@ export class TemaComponent {
   @Input() elTema: String;
   public cuestionarios = new Array<cuestionario>();
   public contador: number = 0;
-  public $contador = new BehaviorSubject<number>(0);
 
-  constructor() {
-
-    this.$contador.subscribe(n => {
-      this.contador = n;
-    });    
-
+  constructor() { 
     let cuestionario1 = new cuestionario("Cuestionario 1");
     let cuestionario2 = new cuestionario("Cuestionario 2");
     cuestionario1.addPregunta("Quien es el mejor?");
@@ -41,7 +35,12 @@ export class TemaComponent {
     this.cuestionarios.push(cuestionario1, cuestionario2);
   }
 
+  public aumentarContador(numero: number) {
+    this.contador = numero;
+  }
+
 }
+
 
 export class cuestionario {
   public nombre: string;
