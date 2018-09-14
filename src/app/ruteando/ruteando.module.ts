@@ -19,6 +19,7 @@ import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/lista
 import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { JuegoSimonComponent } from '../componentes/juego-simon/juego-simon.component';
+import { SeccionCuestionarioComponent } from '../componentes/seccion-cuestionario/seccion-cuestionario.component';
 
 
 // declaro donde quiero que se dirija
@@ -31,6 +32,7 @@ const MiRuteo = [
 {path: 'Registro' , component: RegistroComponent},
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
+{path: 'Cuestionario' , component: SeccionCuestionarioComponent},
 {path: 'Paises' , component: ListadoDePaisesComponent},
 
 { 

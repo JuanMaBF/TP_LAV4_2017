@@ -5,7 +5,7 @@ import { Http, Response } from '@angular/http';
 
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
 
 
 @Injectable()

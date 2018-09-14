@@ -57,6 +57,10 @@ import { JuegoSimonComponent } from './componentes/juego-simon/juego-simon.compo
 
 import { ModalModule } from 'ngx-modialog';
 import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
+import { SeccionCuestionarioComponent } from './componentes/seccion-cuestionario/seccion-cuestionario.component';
+import { CuestionarioComponent } from './componentes/seccion-cuestionario/cuestionario/cuestionario';
+import { TemaComponent } from './componentes/seccion-cuestionario/tema/tema.component';
+import { PregunatComponent } from './componentes/seccion-cuestionario/pregunta/pregunta.controller';
 
 @NgModule({
   declarations: [
@@ -83,7 +87,11 @@ import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    JuegoSimonComponent
+    JuegoSimonComponent,
+    SeccionCuestionarioComponent,
+    CuestionarioComponent,
+    TemaComponent,
+    PregunatComponent
   ],
   imports: [
     BrowserModule,
