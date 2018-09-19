@@ -21,6 +21,7 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 import { JuegoSimonComponent } from '../componentes/juego-simon/juego-simon.component';
 import { SeccionCuestionarioComponent } from '../componentes/seccion-cuestionario/seccion-cuestionario.component';
 import { TicTacToeComponent } from '../componentes/juego-ta-te-ti/juego-ta-te-ti.component';
+import { JuegoPPTComponent } from '../componentes/juego-ppt/juego-ppt.component';
 
 
 // declaro donde quiero que se dirija
@@ -45,6 +46,7 @@ const MiRuteo = [
     {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
     {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
     {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
+    {path: 'PPT' , component: JuegoPPTComponent},
     {path: 'Simon' , component: JuegoSimonComponent},
     {path: 'TaTeTi' , component: TicTacToeComponent},
   ]
