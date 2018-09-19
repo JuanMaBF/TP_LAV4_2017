@@ -6,17 +6,18 @@
   <div class="col-11">
     <div class="card">
       <div class="card-body">
-        <form>
-          <h1>2 + 2 =</h1>
+        
+          <h1>{{primerNumero}} {{operador}} {{segundoNumero}} =</h1>
           <div class="form-group">
-            <input type="number" class="form-control" placeholder="Resultado">
+            <input neme="respuesta" [(ngModel)]="respuesta" type="number" class="form-control" placeholder="Resultado">
+            {{respuesta}}
           </div>
-          <button (click)="iniciarJuego()" [hidden]="!juegoIniciado" type="submit" class="btn btn-primary">Iniciar</button>
-          <div [hidden]="juegoIniciado">
-            <button (click)="verificar()" type="submit" class="btn btn-success">Verificar</button>
+          <button (click)="iniciarJuego()" [hidden]="juegoIniciado" type="submit" class="btn btn-primary">Iniciar</button>
+          <div [hidden]="!juegoIniciado">
+            <button (click)="finalizarJuego()" type="submit" class="btn btn-success">Verificar</button>
             Verificando en {{tiempo}}
           </div>
-        </form>
+        
       </div>
     </div>    
   </div>
