@@ -1,10 +1,28 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url(https://fonts.googleapis.com/css?family=Coiny);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif);
 
 body {
     background-color: #00BCD4;
+    font-family: Noto Serif !important;
 }
+
+.navbar-light {
+    background-color: #FF5722 !important;
+}
+
+.navbar-brand {
+    font-family: Coiny;
+    color: white !important;
+}
+
 
 .btn-primary {
     background-color: #FF5722;
     border-color: rgb(248, 67, 12);
+}
+
+.page-title {
+    font-family: Coiny;
+    color: white;
 }
