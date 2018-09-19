@@ -61,6 +61,7 @@ import { SeccionCuestionarioComponent } from './componentes/seccion-cuestionario
 import { CuestionarioComponent } from './componentes/seccion-cuestionario/cuestionario/cuestionario';
 import { TemaComponent } from './componentes/seccion-cuestionario/tema/tema.component';
 import { PregunatComponent } from './componentes/seccion-cuestionario/pregunta/pregunta.controller';
+import { TicTacToeComponent } from './componentes/juego-ta-te-ti/juego-ta-te-ti.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { PregunatComponent } from './componentes/seccion-cuestionario/pregunta/p
     SeccionCuestionarioComponent,
     CuestionarioComponent,
     TemaComponent,
-    PregunatComponent
+    PregunatComponent,
+    TicTacToeComponent
   ],
   imports: [
     BrowserModule,

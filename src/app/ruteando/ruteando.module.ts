@@ -20,6 +20,7 @@ import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-goo
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { JuegoSimonComponent } from '../componentes/juego-simon/juego-simon.component';
 import { SeccionCuestionarioComponent } from '../componentes/seccion-cuestionario/seccion-cuestionario.component';
+import { TicTacToeComponent } from '../componentes/juego-ta-te-ti/juego-ta-te-ti.component';
 
 
 // declaro donde quiero que se dirija
@@ -44,7 +45,8 @@ const MiRuteo = [
     {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
     {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
     {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-    {path: 'Simon' , component: JuegoSimonComponent}
+    {path: 'Simon' , component: JuegoSimonComponent},
+    {path: 'TaTeTi' , component: TicTacToeComponent},
   ]
 },
 {path: '**' , component: ErrorComponent},
