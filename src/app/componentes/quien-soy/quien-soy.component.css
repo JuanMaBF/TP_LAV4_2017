@@ -31,6 +31,11 @@ p {
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
 }
+
+.grey-color {
+    color: #555555;
+}
+
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
