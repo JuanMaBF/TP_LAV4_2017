@@ -14,55 +14,89 @@
           <a class="nav-link" id="contact-tab" data-toggle="tab" href="#simon" role="tab" aria-controls="simon" aria-selected="false">Simon</a>
         </li>
       </ul>
-      <div class="tab-content" id="myTabContent">
+    </div>
+    <div class="tab-content" id="myTabContent">
+
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div class="row">
-            <div class="col-6">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Velocidad y agilidad aritmética</h1>
+              <p>
+                  La aritmética (del lat. arithmetĭcus, derivado del gr. ἀριθμητικός,1​
+                   a partir de ἀριθμός, «número») es la rama de la matemática cuyo 
+                   objeto de estudio son los números y las operaciones elementales 
+                   hechas con ellos: adición, sustracción, multiplicación y división. 
+                   <i>(Fuente: Wikipedia)</i>
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
                 <img class="img-thumbnail"   src="./assets/imagenes/cerebro2.jpg" alt="Avatar" style="width:100%">
             </div>
-            <div class="col-6">
-              <h1>Velocidad y agilidad aritmética</h1>
+            <div class="col-12 col-md-10">
+              <button class="btn btn-primary btn-primary-tabs btn-lg btn-block"  (click)="Juego('Agilidad')">Jugar</button>
             </div>
-            <p>Juego de agilidad mental</p> <br>
-            <button class="btn btn-primary btn-lg btn-block"  (click)="Juego('Agilidad')">Jugar</button>
           </div>
         </div>
+
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <div class="row">
-            <div class="col-6">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Piedra Papel o Tijera</h1>
+              <p>
+                  Piedra, papel o tijera, conocido también como cachipún, jankenpón, 
+                  dum-kin-voy, yan ken po, pin pon papas, chis bun papas, hakembó,
+                  How-are-you-speak o kokepon, es un juego infantil, un juego de 
+                  manos en el que existen tres elementos. <i>(Fuente: Wikipedia)</i>
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
                 <img class="img-thumbnail"   src="./assets/imagenes/ppt2.jpg" alt="Avatar" style="width:100%">
             </div>
-            <div class="col-6">
-              <h1>Piedra Papel o Tijera</h1>
+            <div class="col-12 col-md-10">
+              <button class="btn btn-primary btn-primary-tabs btn-lg btn-block"  (click)="Juego('PPT')">Jugar</button>
             </div>
-            <p>Juega contra la máquina</p> <br>
-            <button class="btn btn-primary btn-lg btn-block"  (click)="Juego('PPT')">Jugar</button>
           </div>
         </div>
+
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-          <div class="row">
-            <div class="col-6">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Adivina el número secreto</h1>
+              <p>
+                  En la teoría de juegos, adivinar el numero secreto es un juego en el que 
+                  varias personas proponen un número que ellos deberan adivinar, y donde los números 
+                  pueden estarn restringidos a los números reales o bien entre 0 y 100, etc. 
+                  El ganador es el que adivina el numero oculto. <i>(Fuente: Wikipedia)</i>
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
                 <img class="img-thumbnail"   src="./assets/imagenes/numero.jpg" alt="Avatar" style="width:100%">
             </div>
-            <div class="col-6">
-              <h1>Adivina el número secreto</h1>
+            <div class="col-12 col-md-10">
+              <button class="btn btn-primary btn-primary-tabs btn-lg btn-block"  (click)="Juego('Adivina')">Jugar</button>
             </div>
-            <p>Juega de estrategia</p> <br>
-            <button class="btn btn-primary btn-lg btn-block"  (click)="Juego('Adivina')">Jugar</button>
           </div>
         </div>
+
         <div class="tab-pane fade" id="simon" role="tabpanel" aria-labelledby="simon-tab">
-          <div class="row">
-            <div class="col-6">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Simon</h1>
+              <p>
+                  Simon es un juego electrónico creado por Ralph Baer y Howard J. Morrison en 1978. 
+                  Tuvo un gran éxito durante los 80. Tiene forma de disco, en una de sus caras 
+                  se puede ver cuatro cuadrantes, cada uno con un color: verde, rojo, azul y amarillo 
+                  en su versión original. Su nombre se debe por el conocido juego tradicional del 
+                  mismo nombre: Simón dice, de donde se inspira. <i>(Fuente: Wikipedia)</i>
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
                 <img class="img-thumbnail"   src="./assets/imagenes/simon.jpg" alt="Avatar" style="width:100%">
             </div>
-            <div class="col-6">
-              <h1>Simon</h1>
+            <div class="col-12 col-md-10">
+              <button class="btn btn-primary btn-primary-tabs btn-lg btn-block"  (click)="Juego('Simon')">Jugar</button>
             </div>
-            <p>Juego de momoria</p> <br>
-            <button class="btn btn-primary btn-lg btn-block"  (click)="Juego('Simon')">Jugar</button>
           </div>
         </div>
       </div>
-    </div>
   </div>

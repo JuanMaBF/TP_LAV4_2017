@@ -26,3 +26,30 @@ body {
     font-family: Coiny;
     color: white;
 }
+
+.btn-outline-primary {
+    color: #FF5722;
+    border-color: #FF5722;
+}
+
+/*Nav tabs*/
+#navs-container {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: .2rem;
+    background-color: #FFF;
+}
+
+.tab-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    background-color: #FFF;
+
+}
+
+.btn-primary-tabs {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
