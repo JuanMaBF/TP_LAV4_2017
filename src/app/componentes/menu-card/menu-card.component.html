@@ -11,7 +11,10 @@
           <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Número</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#simon" role="tab" aria-controls="simon" aria-selected="false">Simon</a>
+          <a class="nav-link" id="simon-tab" data-toggle="tab" href="#simon" role="tab" aria-controls="simon" aria-selected="false">Simon</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="tateti-tab" data-toggle="tab" href="#tateti" role="tab" aria-controls="tateti" aria-selected="false">Ta te ti</a>
         </li>
       </ul>
     </div>
@@ -98,5 +101,26 @@
             </div>
           </div>
         </div>
+
+        <div class="tab-pane fade" id="tateti" role="tabpanel" aria-labelledby="tateti-tab">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Ta te ti</h1>
+              <p>
+                El tres en línea, también conocido como Ceros y Cruces, tres en raya (España, Ecuador y Bolivia), 
+                Michi (en Perú), juego del gato, Triqui (en Colombia), Cuadritos, Gato (en Chile y México),
+                Triqui traka, Equis Cero, Tic-Tac-Toe (en Estados Unidos), es un juego de lápiz y papel entre 
+                dos jugadores: O y X, que marcan los espacios de un tablero de 3×3 alternadamente. <i>(Fuente: Wikipedia)</i>
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="img-thumbnail"   src="./assets/imagenes/tateti.png" alt="Avatar" style="width:100%">
+            </div>
+            <div class="col-12 col-md-10">
+              <button class="btn btn-primary btn-primary-tabs btn-lg btn-block"  (click)="Juego('TaTeTi')">Jugar</button>
+            </div>
+          </div>
+        </div>
+
       </div>
   </div>
