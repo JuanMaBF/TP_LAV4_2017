@@ -11,7 +11,7 @@
             <a class="nav-link active" id="juegos-tab" data-toggle="tab" href="#juegos" role="tab" aria-controls="home" aria-selected="true">Juegos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">PPT</a>
+            <a class="nav-link" id="resultados-tab" data-toggle="tab" href="#resultados" role="tab" aria-controls="profile" aria-selected="false">Resultados</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Número</a>
@@ -22,27 +22,61 @@
         </ul>
       </div>
       <div class="tab-content" id="myTabContent">
-  
-          <div class="tab-pane fade show active" id="juegos" role="tabpanel" aria-labelledby="juegos-tab">
-            <div class="row justify-content-center">
-              <div class="col-12 col-md-6">
-                <h1>Sala de juegos</h1>
-                <p>
-                  El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente 
-                  de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. 
-                  Este método busca que los alumnos se apropien de los temas impartidos por los 
-                  docentes utilizando el juego.
-                </p>
-              </div>
-              <div class="col-12 col-md-6">
-                  <img class="img-thumbnail"   src="./assets/imagenes/cerebro2.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="col-12 col-md-10">
-                <button routerLink="/Juegos" class="btn btn-primary btn-primary-tabs btn-lg btn-block"  (click)="Juego('Agilidad')">Ir =></button>
-              </div>
+        <div class="tab-pane fade show active" id="juegos" role="tabpanel" aria-labelledby="juegos-tab">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Sala de juegos</h1>
+              <p>
+                El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente 
+                de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. 
+                Este método busca que los alumnos se apropien de los temas impartidos por los 
+                docentes utilizando el juego.
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="img-thumbnail"   src="./assets/imagenes/BFD.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="col-12 col-md-10">
+              <button routerLink="/Juegos" class="btn btn-primary btn-primary-tabs btn-lg btn-block">Ir =></button>
             </div>
           </div>
         </div>
+
+        <div class="tab-pane fade" id="resultados" role="tabpanel" aria-labelledby="resultados-tab">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Listado de los resultados</h1>
+              <p>
+                Los listados de los resultados con ordenamiento y busqueda
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="img-thumbnail"   src="./assets/imagenes/listado.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="col-12 col-md-10">
+              <button routerLink="/Listado" class="btn btn-primary btn-primary-tabs btn-lg btn-block">Ir =></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="resultados" role="tabpanel" aria-labelledby="resultados-tab">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+              <h1>Listado de los resultados</h1>
+              <p>
+                Los listados de los resultados con ordenamiento y busqueda
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="img-thumbnail"   src="./assets/imagenes/listado.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="col-12 col-md-10">
+              <button routerLink="/Listado" class="btn btn-primary btn-primary-tabs btn-lg btn-block">Ir =></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
    
     <!--<ul class="list-group">
         <li class="list-group-item list-group-item-danger">
