@@ -3,61 +3,13 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'juego-ppt',
-    template: `
-            <div class="container">
-            <div class="header row">
-            <div class="col-xs-11 h1"> Piedra, papel, tijera, lagarto, spock</div>
-            <a class="btn btn-info col-xs-1" href="#">?</a>
-            </div>
-        
-            <div class="main-content row">
-        
-            <!-- Player window -->
-            <div class="player-window panel panel-info col-xs-5">
-                <h3 class="panel-heading">Player</h3>
-                <div class="panel-body" id="js-player-img"><i class="far fa-hand-right"></i>
-                </div>
-            </div>
-        
-            <!-- Versus window -->
-            <div class="versus-window col-xs-2 h1 text-center">
-                VS
-            </div>
-        
-            <!-- Oponent window -->
-            <div class="oponent-window panel panel-info col-xs-5">
-                <h3 class="panel-heading">Oponente</h3>
-                <div class="panel-body" id="js-oponent-img"><i class="far fa-hand-left"></i>
-                </div>
-            </div>
-            </div>
-        
-            <div id="js-infobox" class="info-box text-center jumbotron col-xs-12">
-            <span id="js-infobox-details">Selecciona una opción y...</span>
-            <div id="js-infobox-main" class="h2"> ...Dale a jugar!</div>
-        
-        
-            <div class="player-menu btn-group">
-                <button class="btn btn-default btn-lg" value="Piedra" (click)="turno('Piedra')"><i class="far fa-hand-rock"></i>
-                </button>
-        
-                <button class="btn btn-default btn-lg" value="Papel" (click)="turno('Papel')"><i class="far fa-hand-paper"></i>
-                </button>
-        
-                <button class="btn btn-default btn-lg" value="Tijera" (click)="turno('Tijera')">
-                <i class="far fa-hand-scissors"></i>
-                </button>
-        
-            </div>
-        
-            </div>
-        
-        </div>
-    `,
+    templateUrl: 'juego-ppt.component.html',
     styles: [`
-        .container {
-        width: 660px
-        }    
+        
+        .card-header {
+            text-align: center;
+        }
+
         .oponent-window,
         .player-window {
         font-size: 15rem;

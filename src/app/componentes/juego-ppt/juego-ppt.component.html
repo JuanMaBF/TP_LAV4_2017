@@ -1,0 +1,54 @@
+<div class="container">
+    
+    <div class="row justify-content-center">
+
+        <div class="col col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Vos</h3>
+                </div>
+                <div class="card-body">
+                    <i class="far fa-hand-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="versus-window col-2 h1 text-center">
+            VS
+        </div>
+
+        <div class="col col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Vos</h3>
+                </div>
+                <div class="card-body">
+                    <div class="panel-body" id="js-player-img">
+                            <i class="far fa-hand-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="js-infobox" class="info-box text-center jumbotron col-xs-12">
+        <span id="js-infobox-details">Selecciona una opción y...</span>
+        <span id="js-infobox-main" class="h2"> ...Dale a jugar!</span>
+
+
+        <div class="player-menu btn-group">
+            <button class="btn btn-default btn-lg" value="Piedra" (click)="turno('Piedra')"><i class="far fa-hand-rock"></i>
+            </button>
+
+            <button class="btn btn-default btn-lg" value="Papel" (click)="turno('Papel')"><i class="far fa-hand-paper"></i>
+            </button>
+
+            <button class="btn btn-default btn-lg" value="Tijera" (click)="turno('Tijera')">
+            <i class="far fa-hand-scissors"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
