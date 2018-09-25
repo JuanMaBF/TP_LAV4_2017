@@ -26,3 +26,9 @@
     background: #55ACEE;
     color: white;
 }
+
+.card{
+    border: 0px;
+    background-color: transparent;
+    margin-top: 10px;
+}

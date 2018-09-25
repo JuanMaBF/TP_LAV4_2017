@@ -7,6 +7,16 @@ import { JuegoServiceService } from '../../servicios/juego-service.service';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
+ 
+  public listarResultados(): void {
+
+  }
+
+  public listarFiltrado(filtro: String): void {
+
+  }
+ 
+ 
   public listadoParaCompartir: Array<any>;
    miServicioJuego:JuegoServiceService
 
