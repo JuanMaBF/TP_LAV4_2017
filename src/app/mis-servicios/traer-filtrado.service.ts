@@ -16,7 +16,7 @@ export class TraerFiltradoService {
     public traerFiltrado(url: string, campo: string, filtro: string): Promise<any> {
         return this.httpService
             .get(url)
-            .then(data => data.filter(obj => obj['campo'] == filtro))
+            .then(data => data.filter(obj => obj[campo] == filtro))
             .catch(e => e);
     }
 }

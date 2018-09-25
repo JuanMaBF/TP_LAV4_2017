@@ -64,6 +64,8 @@ import { PregunatComponent } from './componentes/seccion-cuestionario/pregunta/p
 import { TicTacToeComponent } from './componentes/juego-ta-te-ti/juego-ta-te-ti.component';
 import { JuegoPPTComponent } from './componentes/juego-ppt/juego-ppt.component';
 import { CustomHttpService } from './mis-servicios/custom-http.service';
+import { MiJuegosService } from './mis-servicios/mi-juegos.service';
+import { TraerFiltradoService } from './mis-servicios/traer-filtrado.service';
 
 @NgModule({
   declarations: [
@@ -96,8 +98,7 @@ import { CustomHttpService } from './mis-servicios/custom-http.service';
     TemaComponent,
     PregunatComponent,
     TicTacToeComponent,
-    JuegoPPTComponent,
-    CustomHttpService
+    JuegoPPTComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +114,15 @@ import { CustomHttpService } from './mis-servicios/custom-http.service';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ 
+    JuegoServiceService, 
+    MiHttpService,
+    PaisesService,
+    ArchivosJugadoresService,
+    JugadoresService,
+    CustomHttpService,
+    MiJuegosService,
+    TraerFiltradoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

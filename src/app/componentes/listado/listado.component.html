@@ -22,16 +22,16 @@
 <div class="container">
     <div class="card">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary">Traer todos</button>
-          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button (click)="listarResultados()" type="button" class="btn btn-secondary">Traer todos</button>
+          <button  id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Filtrar por juego
           </button>
           <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" href="#">Ta te ti</a>
+            <span (click)="listarFiltrado('ta te ti')" class="dropdown-item" href="#">Ta te ti</span>
           </div>
         </div>
     </div>
 </div>
 
-<app-listado-de-resultados [listado]="listadoParaCompartir"> </app-listado-de-resultados>
+<app-listado-de-resultados [listado]="listaDeJuegos"> </app-listado-de-resultados>
 

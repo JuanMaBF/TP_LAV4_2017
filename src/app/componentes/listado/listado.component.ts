@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegoServiceService } from '../../servicios/juego-service.service';
+import { MiJuegosService } from '../../mis-servicios/mi-juegos.service';
 
 @Component({
   selector: 'app-listado',
@@ -7,23 +8,32 @@ import { JuegoServiceService } from '../../servicios/juego-service.service';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
+
+  public listaDeJuegos: Array<any>;
+
+  constructor(public servicioJuego:JuegoServiceService,
+    public juegoService: MiJuegosService) {
+    this.miServicioJuego = this.servicioJuego;
+    
+  }
  
   public listarResultados(): void {
-
+    this.juegoService
+      .traerTodos()
+      .then(res => { this.listaDeJuegos = res })
+      .catch(err => console.log(err));
   }
 
-  public listarFiltrado(filtro: String): void {
-
+  public listarFiltrado(filtro: string): void {
+    this.juegoService
+      .traerFiltradoPorJuego(filtro)
+      .then(res => { this.listaDeJuegos = res })
+      .catch(err => console.log(err));
   }
  
  
   public listadoParaCompartir: Array<any>;
    miServicioJuego:JuegoServiceService
-
-  constructor(servicioJuego:JuegoServiceService) {
-    this.miServicioJuego = servicioJuego;
-    
-  }
   
   ngOnInit() {
     
