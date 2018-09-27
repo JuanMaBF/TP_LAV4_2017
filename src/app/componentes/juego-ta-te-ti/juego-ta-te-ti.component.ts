@@ -424,7 +424,7 @@ class UtilService {
   }
 
   _clearTheBoard() {
-    const board = document.body.querySelectorAll('td');
+    const board = Array.from(document.body.querySelectorAll('td'));
     board.forEach(b => {
         b.innerHTML = '';
 

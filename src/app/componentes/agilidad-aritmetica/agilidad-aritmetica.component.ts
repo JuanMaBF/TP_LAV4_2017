@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Modal } from 'ngx-modialog/plugins/bootstrap';
+import { MiJuegosService } from '../../mis-servicios/mi-juegos.service';
 
 @Component({
   selector: 'app-agilidad-aritmetica',
@@ -19,7 +20,8 @@ export class AgilidadAritmeticaComponent {
   public resultado: number;
   public respuesta: number;
 
-  constructor(public modal: Modal) { 
+  constructor(public modal: Modal,
+    public juegoService: MiJuegosService) { 
   }
 
   private setRepetidor() {
@@ -49,10 +51,15 @@ export class AgilidadAritmeticaComponent {
   }
 
   public finalizarJuego() {
+
+    let resultado = this.respuesta == this.resultado;
+
     this.modal.alert()
-      .title(this.respuesta == this.resultado ? "Ganaste!" : "Perdites :(")
+      .title(resultado ? "Ganaste!" : "Perdites :(")
       .body("El resultado es: " + this.respuesta)
       .open();
+
+    this.juegoService.sumarResultado("Agilidad", "Pepiro", resultado ? "Ganó" : "Perdió");
 
     clearInterval(this.repetidor);   
     this.juegoIniciado = false;

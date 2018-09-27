@@ -14,7 +14,7 @@ export class JuegoSimonComponent {
 
   private colorCodes: Array<string> = ['r', 'bl', 'yl', 'gr'];
   private sequence: Array<string>;
-  private level: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+  public level: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
   private showingSequence: boolean = false;
   private currentLevelIndex: number = 0;
   private audios: Array<any> = new Array<any>(); 
