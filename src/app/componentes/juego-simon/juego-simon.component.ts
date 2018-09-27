@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {  BehaviorSubject } from 'rxjs';
 import * as $ from 'jquery';
 import { Modal } from 'ngx-modialog/plugins/bootstrap';
+import { MiJuegosService } from '../../mis-servicios/mi-juegos.service';
 
 @Component({
   selector: 'juego-simon',
@@ -19,7 +20,8 @@ export class JuegoSimonComponent {
   private currentLevelIndex: number = 0;
   private audios: Array<any> = new Array<any>(); 
 
-  public constructor(public modal: Modal) {
+  public constructor(public modal: Modal,
+    public juegoService: MiJuegosService) {
     this.level.subscribe( val => {
       this.currentLevelIndex = 0;
       this.showingSequence = true;
@@ -80,10 +82,19 @@ export class JuegoSimonComponent {
 
 
   private endGame(win: boolean): void {
-    this.modal.alert()
+    let resultadoJuego = (win ? "Ganó" : "Perdió") + ". Nivel: " + this.level.value; 
+
+    this.modal.prompt()
+      .size('lg')
+      .showClose(false)
       .title(win ? "Ganaste!" : "Perdites :(")
-      .body("Puntaje: " + this.level.value)
-      .open();
+      .placeholder('Ingresá tu nombre')
+      .body('Ingresá tu nombre')
+      .open().result
+      .then(nombre => {
+        this.juegoService.sumarResultado("Simon", nombre, resultadoJuego);
+      });
+    
     let current = localStorage.getItem('simon');
     localStorage.setItem('simon', current + ',{ win: '+win+', puntaje:' + this.level.value + '}');
     this.gameStarted = false;

@@ -51,9 +51,7 @@ export class AgilidadAritmeticaComponent {
   }
 
   public finalizarJuego() {
-
     let resultado = this.respuesta == this.resultado;
-    
     this.modal.prompt()
       .size('lg')
       .showClose(false)
@@ -62,10 +60,9 @@ export class AgilidadAritmeticaComponent {
       .body('Ingresá tu nombre')
       .open().result
       .then(nombre => {
-        this.juegoService.sumarResultado("Agilidad", nombre, resultado ? "Ganó" : "Perdió");
+        this.juegoService.sumarResultado("Agilidad aritmetica", nombre, resultado ? "Ganó" : "Perdió");
         this.resetGame();
       });
-
   }  
 
   private resetGame(): void {

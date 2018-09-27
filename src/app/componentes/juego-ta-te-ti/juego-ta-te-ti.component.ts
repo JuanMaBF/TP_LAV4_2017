@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
-
+import { MiJuegosService } from "../../mis-servicios/mi-juegos.service";
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
+import { BehaviorSubject } from "rxjs";
 
 @Component({
   selector: 'my-tic-tac-toe',
@@ -52,6 +54,12 @@ export class TicTacToeComponent {
   public tableIsVisible = false;
   public aiSymbol = 'O';
   public playerSymbol = 'X';
+  public subject: BehaviorSubject<any> = new BehaviorSubject<any>(0);
+
+  constructor(public modal: Modal,
+    public juegoService: MiJuegosService,) {
+      
+    }
 
   setPlayerSymbol(symbol: string): void {
     const turn = this._getTurn(symbol);
@@ -59,8 +67,37 @@ export class TicTacToeComponent {
 
     this.tableIsVisible = true;
     let ai = new Ai();
-    this.game = new Game(ai, turn, this.playerSymbol, this.aiSymbol);
+    this.game = new Game(ai, turn, this.playerSymbol, this.aiSymbol, this.subject);
     ai.plays(this.game);
+
+    this.subject.subscribe(state => {
+      let status = state.status;
+      let usrGano;
+      let hayResultado = true;
+      if (state.status === 'ai is the winner!') {
+        usrGano = false;
+      } else if (state.status === 'It is a draw!') {
+        usrGano = true;
+      } else {
+        hayResultado = false;
+      }
+
+      if(hayResultado) {
+        let resultadoTitulo = usrGano ? "Empate" : "Perdiste";
+        let resultado = usrGano ? "Empató" : "Perdió";
+
+        this.modal.prompt()
+          .size('lg')
+          .showClose(false)
+          .title(resultadoTitulo)
+          .placeholder('Ingresá tu nombre')
+          .body('Ingresá tu nombre')
+          .open().result
+          .then(nombre => {
+            this.juegoService.sumarResultado("Ta te ti", nombre, resultado);
+          });
+      }
+    })
 
     this.game.start();
   }
@@ -143,6 +180,7 @@ class AiAction {
 }
 
 class Ai {
+
   game: Game;
   utils = new UtilService();
 
@@ -238,7 +276,8 @@ class Game {
     autoPlayer: any,
     turn: string,
     playerSymbol: string,
-    aiSymbol: string
+    aiSymbol: string,
+    public subject: BehaviorSubject<any>
   ) {
     this.ai = autoPlayer;
     this.currentState = new State();
@@ -258,6 +297,7 @@ class Game {
     if (_state.isVictory()) {
       this.status = 'ended';
       this.utils.displayMessage(_state.status);
+      this.subject.next(_state);
     } else {
       if (this.currentState.turn === 'ai') {
         this.ai.notify('ai');
