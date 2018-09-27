@@ -19,7 +19,7 @@ export class CustomHttpService {
         return this.http
             .post(url, data)
             .toPromise()
-            .then(resp => {console.log(resp)})
+            .then(resp => resp)
             .catch(err => err);
     }
 }

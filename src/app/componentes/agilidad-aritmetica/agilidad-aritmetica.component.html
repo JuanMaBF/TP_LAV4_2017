@@ -10,7 +10,6 @@
           <h1>{{primerNumero}} {{operador}} {{segundoNumero}} =</h1>
           <div class="form-group">
             <input neme="respuesta" [(ngModel)]="respuesta" type="number" class="form-control" placeholder="Resultado">
-            {{respuesta}}
           </div>
           <button (click)="iniciarJuego()" [hidden]="juegoIniciado" type="submit" class="btn btn-primary">Iniciar</button>
           <div [hidden]="!juegoIniciado">

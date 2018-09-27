@@ -11,17 +11,17 @@ export class MiJuegosService {
 
     public traerTodos(): Promise<any> {
         return this.filtradoService
-            .traerTodos('http://lvh.me/ApiRest/index.php/traerTodos')
+            .traerTodos('https://apitplav.000webhostapp.com/traerTodos')
     }
 
     public traerFiltradoPorJuego(juego: string): Promise<any> {
         return this.filtradoService
-            .traerFiltrado('http://lvh.me/ApiRest/index.php/traerTodos', 'juego', juego);
+            .traerFiltrado('https://apitplav.000webhostapp.com/traerTodos', 'juego', juego);
     }
 
     public setJuegos(juegos: any): Promise<any> {
         return this.httpService
-            .post('http://lvh.me/ApiRest/index.php/guardarJuego', juegos);
+            .post('https://apitplav.000webhostapp.com/guardarJuego', juegos);
     }
 
     public sumarResultado(juego: string, jugador: string, resultado: string): void {
@@ -33,7 +33,6 @@ export class MiJuegosService {
                     resultado: resultado
                 };
                 res.push(juegoNuevo);
-                console.log(res);
                 this.setJuegos(res);
             })
             .catch(err => console.log('c rompio'));
