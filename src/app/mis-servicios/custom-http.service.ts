@@ -17,7 +17,7 @@ export class CustomHttpService {
 
     public post(url: string, data: any): Promise<any> {
         return this.http
-            .post(url, data)
+            .post(url, JSON.stringify(data))
             .toPromise()
             .then(resp => resp)
             .catch(err => err);

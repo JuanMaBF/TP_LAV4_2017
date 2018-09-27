@@ -35,7 +35,7 @@ export class MiJuegosService {
                 res.push(juegoNuevo);
                 this.setJuegos(res);
             })
-            .catch(err => console.log('c rompio'));
+            .catch(err => console.log(err));
     }
 
 }
