@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
+import { MiJuegosService } from "../../mis-servicios/mi-juegos.service";
 
 @Component({
     selector: 'juego-ppt',
@@ -19,18 +21,44 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
     `]
 }) export class JuegoPPTComponent {
 
-    public turno(elecUsuario: string): void {
+    public elecMaquina;
+    public elecUsuario;
 
-        let elecMaquina = ["Piedra", "Papel", "Tijera"][Math.floor(Math.random() * 3)];
-        let resultado = elecUsuario + elecMaquina;
+    constructor(public modal: Modal,
+      public juegoService: MiJuegosService) {
+        
+      }
+
+    public turno(elUsr: string): void {
+
+        this.elecMaquina = ["Piedra", "Papel", "Tijera"][Math.floor(Math.random() * 3)];
+        this.elecUsuario = elUsr;
+        let resultado = elUsr + this.elecMaquina;
+
+        let final;
+        let mensaje;
 
         if(["PiedraPiedra", "PapelPapel", "TijeraTijera"].indexOf(resultado) > -1) {
-            //Empate
+            final = "Empate";
+            mensaje = "Empate";
         } else if(["PiedraTijera", "TijeraPapel", "PapelPiedra"].indexOf(resultado) > -1) {
-            //Gana usuario
+            final = "Ganó";
+            mensaje = "Ganaste!";
         } else if(["TijeraPiedra", "PapelTijera", "PiedraPapel"].indexOf(resultado) > -1) {
-            //Gana maquina
+          final = "Perdió";
+          mensaje = "Perdiste :(";
         }
+
+        this.modal.prompt()
+          .size('lg')
+          .showClose(false)
+          .title(mensaje)
+          .placeholder('Ingresá tu nombre')
+          .body('Ingresá tu nombre')
+          .open().result
+          .then(nombre => {
+            this.juegoService.sumarResultado("PPT", nombre, final);
+          });
 
         
         /*// Difinir la variable miTurno como value del botón 

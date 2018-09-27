@@ -7,8 +7,19 @@
                 <div class="card-header">
                     <h3>Vos</h3>
                 </div>
-                <div class="card-body">
-                    <i class="far fa-hand-right"></i>
+                <div class="card-body" style="font-size: 200px;">
+                    <div [hidden]="elecMaquina != undefined">
+                        <i class="far fa-hand-point-right"></i>
+                    </div>
+                    <div [hidden]="elecMaquina != 'Piedra'">
+                        <i class="far fa-hand-rock"></i>
+                    </div>
+                    <div [hidden]="elecMaquina != 'Papel'">
+                        <i class="far fa-hand-paper"></i>
+                    </div>
+                    <div [hidden]="elecMaquina != 'Tijera'">
+                        <i class="far fa-hand-scissors"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,9 +33,18 @@
                 <div class="card-header">
                     <h3>Vos</h3>
                 </div>
-                <div class="card-body">
-                    <div class="panel-body" id="js-player-img">
-                            <i class="far fa-hand-right"></i>
+                <div class="card-body" style="font-size: 200px;">
+                    <div [hidden]="elecUsuario != undefined">
+                        <i class="far fa-hand-point-left"></i>
+                    </div>
+                    <div [hidden]="elecUsuario != 'Piedra'">
+                        <i class="far fa-hand-rock"></i>
+                    </div>
+                    <div [hidden]="elecUsuario != 'Papel'">
+                        <i class="far fa-hand-paper"></i>
+                    </div>
+                    <div [hidden]="elecUsuario != 'Tijera'">
+                        <i class="far fa-hand-scissors"></i>
                     </div>
                 </div>
             </div>
@@ -37,14 +57,16 @@
 
 
         <div class="player-menu btn-group">
-            <button class="btn btn-default btn-lg" value="Piedra" (click)="turno('Piedra')"><i class="far fa-hand-rock"></i>
+            <button class="btn btn-default btn-lg" value="Piedra" (click)="turno('Piedra')">
+                <i class="far fa-hand-rock"></i>
             </button>
 
-            <button class="btn btn-default btn-lg" value="Papel" (click)="turno('Papel')"><i class="far fa-hand-paper"></i>
+            <button class="btn btn-default btn-lg" value="Papel" (click)="turno('Papel')">
+                <i class="far fa-hand-paper"></i>
             </button>
 
             <button class="btn btn-default btn-lg" value="Tijera" (click)="turno('Tijera')">
-            <i class="far fa-hand-scissors"></i>
+                <i class="far fa-hand-scissors"></i>
             </button>
 
         </div>

@@ -94,7 +94,7 @@ export class TicTacToeComponent {
           .body('Ingresá tu nombre')
           .open().result
           .then(nombre => {
-            this.juegoService.sumarResultado("Ta te ti", nombre, resultado);
+            this.juegoService.sumarResultado("ta te ti", nombre, resultado);
           });
       }
     })
