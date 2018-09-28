@@ -1,6 +1,6 @@
 
 # SalaDeJuegos
-https://octaviovillegas.github.io/TP_LAV4_2017/
+https://juanmabf.github.io/TP_LAV4_2017/
 
 
 #Pendiente
